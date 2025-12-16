@@ -29,6 +29,12 @@ nav a {
   font-size: 16px;
 }
 
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 .hero {
   height: 80vh;
   background: url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
@@ -53,14 +59,22 @@ nav a {
 }
 
 .btn-primary {
+  display: inline-block;
   margin-top: 20px;
   padding: 12px 24px;
   font-size: 18px;
   background: #e60000;
   color: white;
+  text-decoration: none;
   border: none;
   cursor: pointer;
   border-radius: 6px;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(230, 0, 0, 0.4);
+  background: #ff1a1a;
 }
 
 .section {
@@ -102,4 +116,62 @@ footer p {
   margin: 0;
   font-size: 14px;
   color: #777;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px 20px;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.info-box {
+  max-width: 900px;
+  margin: 40px auto 0;
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #000;
+}
+
+.info-title {
+  font-size: 28px;
+  margin-bottom: 12px;
+}
+
+.info-paragraph {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ddd;
+  margin-bottom: 20px;
+}
+
+.summary-box {
+  border-top: 1px solid #333;
+  padding-top: 16px;
+  font-size: 15px;
+  color: #bbb;
+}
+
+.page-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* pushes nav-buttons-bottom to bottom */
+  padding: 40px 20px;
+  position: relative;
+}
+
+.nav-buttons-bottom {
+  display: flex;
+  justify-content: space-between; /* back = left, next = right */
+  margin-top: 20px;
 }

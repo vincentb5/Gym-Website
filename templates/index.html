@@ -4,22 +4,25 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Gym Training Hub</title>
-  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
 </head>
 <body>
   <header>
-    <h1>Gym Training Hub</h1>
-    <nav>
-      <a href="#workouts">Workouts</a>
-      <a href="#nutrition">Nutrition</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container">
+      <h1>Gym Training Hub</h1>
+      <nav>
+        <a href="#workouts">Workouts</a>
+        <a href="#nutrition">Nutrition</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
+  <main class="container">
   <section class="hero">
     <h2>Transform Your Body</h2>
     <p>Step-by-step workout instructions, training programs, and everything you need to get stronger.</p>
-    <button class="btn-primary">Start Training</button>
+  <a class="btn-primary" href="{{ url_for('step1') }}">Start Training</a>
   </section>
 
   <section class="section" id="workouts">
@@ -44,6 +47,7 @@
     <h3>Nutrition Guides</h3>
     <p>Meal plans, macros explained, and science-based eating strategies.</p>
   </section>
+</main>
 
   <footer id="contact">
     <p>Contact us at: support@gymtraininghub.com</p>
