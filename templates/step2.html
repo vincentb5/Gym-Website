@@ -1,23 +1,27 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% extends "base.html" %}
 
-<div class="page-container">
+{% block title %}Step 2 - Gym Training Hub{% endblock %}
 
-  <div class="nav-buttons">
-    <a href="/step1"><button class="btn-primary">Back</button></a>
-    <a href="/step3"><button class="btn-primary">Next</button></a>
-  </div>
+{% block content %}
+<section class="page-container">
 
   <div class="info-box">
-    <h2 class="info-title">Step Title</h2>
-
+    <h2 class="info-title">Step 2: Strength Training</h2>
     <p class="info-paragraph">
-      Explanation text for this step goes here.
+      Strength training builds muscle, increases bone density, and boosts metabolism. Focus on proper form and controlled movements rather than lifting heavy weights too quickly. Compound exercises such as squats, bench press, rows, and deadlifts are especially effective because they work multiple muscle groups at once. Allow adequate rest between sets and maintain steady breathing throughout each exercise.
     </p>
 
     <div class="summary-box">
       <strong>Summary:</strong>
-      <p>Short recap of the key point.</p>
+      <p>Build muscle and strength using controlled movements and proper form.</p>
     </div>
   </div>
 
-</div>
+  <!-- Bottom navigation buttons (these are fine) -->
+  <div class="nav-buttons-bottom">
+    <a href="/step1"><button class="btn-primary">Back</button></a>
+    <a href="/step3"><button class="btn-primary">Next</button></a>
+  </div>
+
+</section>
+{% endblock %}

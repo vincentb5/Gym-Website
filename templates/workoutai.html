@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% block title %}WorkoutAI - Gym Training Hub{% endblock %}
+
+{% block content %}
+<section class="page-container">
+
+  <div class="info-box">
+    <h2 class="info-title">WorkoutAI</h2>
+
+    <p class="info-paragraph">
+      Ask WorkoutAI anything about workouts, training splits, exercise form,
+      recovery, or fitness nutrition.
+    </p>
+
+    <!-- Chat Box -->
+    <div id="chat-box" class="chat-box"></div>
+
+    <!-- Input -->
+    <div class="chat-input">
+      <input
+        type="text"
+        id="user-input"
+        placeholder="Ask a fitness question..."
+        autocomplete="off"
+      />
+      <button class="btn-primary" onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <!-- Bottom navigation -->
+  <div class="nav-buttons-bottom">
+    <a href="/"><button class="btn-primary">Back</button></a>
+  </div>
+
+</section>
+
+<script>
+async function sendMessage() {
+  const input = document.getElementById("user-input");
+  const message = input.value.trim();
+  if (!message) return;
+
+  const chatBox = document.getElementById("chat-box");
+
+  // Show user message
+  chatBox.innerHTML += `
+    <div class="chat-message user-message">
+      ${message}
+    </div>
+  `;
+
+  input.value = "";
+  chatBox.scrollTop = chatBox.scrollHeight;
+
+  try {
+    const response = await fetch("/workoutai/chat", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message })
+    });
+
+    const data = await response.json();
+
+    // Show AI response
+    chatBox.innerHTML += `
+      <div class="chat-message ai-message">
+        ${data.reply}
+      </div>
+    `;
+
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+  } catch (error) {
+    chatBox.innerHTML += `
+      <div class="chat-message ai-message">
+        Error contacting WorkoutAI.
+      </div>
+    `;
+  }
+}
+
+// Send on Enter key
+document.getElementById("user-input").addEventListener("keydown", function(e) {
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+});
+</script>
+
+{% endblock %}

@@ -1,23 +1,27 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% extends "base.html" %}
 
-<div class="page-container">
+{% block title %}Step 4 - Gym Training Hub{% endblock %}
 
-  <div class="nav-buttons">
-    <a href="/step3"><button class="btn-primary">Back</button></a>
-    <a href="/step5"><button class="btn-primary">Next</button></a>
-  </div>
+{% block content %}
+<section class="page-container">
 
   <div class="info-box">
-    <h2 class="info-title">Step Title</h2>
-
+    <h2 class="info-title">Step 4: Cool-Down & Stretching</h2>
     <p class="info-paragraph">
-      Explanation text for this step goes here.
+      Cooling down helps your heart rate gradually return to normal and reduces muscle stiffness after training. Light movement followed by static stretching allows your muscles to relax and recover. Hold each stretch for 20–30 seconds without bouncing, focusing on the muscles you trained. A proper cool-down improves flexibility and supports long-term mobility.
     </p>
 
     <div class="summary-box">
       <strong>Summary:</strong>
-      <p>Short recap of the key point.</p>
+      <p>Reduce soreness and improve flexibility with light movement and stretching after exercise.</p>
     </div>
   </div>
 
-</div>
+  <!-- Bottom navigation buttons (these are fine) -->
+  <div class="nav-buttons-bottom">
+    <a href="/step3"><button class="btn-primary">Back</button></a>
+    <a href="/step5"><button class="btn-primary">Next</button></a>
+  </div>
+
+</section>
+{% endblock %}

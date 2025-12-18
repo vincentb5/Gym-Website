@@ -1,23 +1,27 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% extends "base.html" %}
 
-<div class="page-container">
+{% block title %}Step 5 - Gym Training Hub{% endblock %}
 
-  <div class="nav-buttons">
-    <a href="/step4"><button class="btn-primary">Back</button></a>
-    <a href="/quiz"><button class="btn-primary">Next</button></a>
-  </div>
+{% block content %}
+<section class="page-container">
 
   <div class="info-box">
-    <h2 class="info-title">Step Title</h2>
-
+    <h2 class="info-title">Step 5: Recovery & Nutrition</h2>
     <p class="info-paragraph">
-      Explanation text for this step goes here.
+      Recovery is essential for progress and injury prevention. Muscle growth and strength gains occur when your body repairs itself after workouts. Prioritize quality sleep, stay hydrated, and eat a balanced diet that includes enough protein, carbohydrates, and healthy fats. Listening to your body and taking rest days when needed will help you stay consistent and continue improving over time.
     </p>
 
     <div class="summary-box">
       <strong>Summary:</strong>
-      <p>Short recap of the key point.</p>
+      <p>Support muscle growth and performance through rest, hydration, and balanced nutrition.</p>
     </div>
   </div>
 
-</div>
+  <!-- Bottom navigation buttons (these are fine) -->
+  <div class="nav-buttons-bottom">
+    <a href="/step4"><button class="btn-primary">Back</button></a>
+    <a href="/quiz"><button class="btn-primary">Next</button></a>
+  </div>
+
+</section>
+{% endblock %}

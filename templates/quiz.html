@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Quiz - Gym Training Hub{% endblock %}
+
+{% block content %}
+<section class="page-container">
+  <div class="info-box">
+    <h2 class="info-title">Fitness Quiz</h2>
+
+    {% if submitted %}
+      <p class="info-paragraph">
+        Your score: <strong>{{ score }}</strong> / <strong>{{ questions|length }}</strong>
+      </p>
+
+      <div class="quiz-actions">
+        <a class="btn" href="{{ url_for('quiz') }}">Try Again</a>
+      </div>
+    {% else %}
+      <form method="POST">
+        {% for q in questions %}
+          {% set q_index = loop.index0 %}
+
+          <div class="quiz-question">
+            <p class="info-paragraph">
+              <strong>{{ loop.index }}.</strong> {{ q.question }}
+            </p>
+
+            <div class="quiz-options">
+              {% for opt in q.options %}
+                <label class="quiz-option">
+                  <input
+                    type="radio"
+                    name="question-{{ q_index }}"
+                    value="{{ opt }}"
+                    required
+                  >
+                  <span>{{ opt }}</span>
+                </label>
+              {% endfor %}
+            </div>
+          </div>
+        {% endfor %}
+
+        <div class="quiz-actions">
+          <button type="submit" class="btn">Submit</button>
+        </div>
+      </form>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}

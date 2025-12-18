@@ -1,56 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Gym Training Hub</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
-</head>
-<body>
-  <header>
-    <div class="container">
-      <h1>Gym Training Hub</h1>
-      <nav>
-        <a href="#workouts">Workouts</a>
-        <a href="#nutrition">Nutrition</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </div>
-  </header>
+{% extends "base.html" %}
 
-  <main class="container">
-  <section class="hero">
-    <h2>Transform Your Body</h2>
-    <p>Step-by-step workout instructions, training programs, and everything you need to get stronger.</p>
-  <a class="btn-primary" href="{{ url_for('step1') }}">Start Training</a>
-  </section>
+{% block title %}Gym Training Hub{% endblock %}
 
-  <section class="section" id="workouts">
-    <h3>Instructional Programs</h3>
-    <div class="features">
-      <div class="card">
-        <h4>Beginner Strength</h4>
-        <p>Learn proper form, safe progression, and build your foundation.</p>
-      </div>
-      <div class="card">
-        <h4>Fat Loss Training</h4>
-        <p>High‑intensity guides and structured routines for results.</p>
-      </div>
-      <div class="card">
-        <h4>Advanced Hypertrophy</h4>
-        <p>Targeted workouts to grow muscle fast and efficiently.</p>
-      </div>
-    </div>
-  </section>
+{% block content %}
 
-  <section class="section" id="nutrition">
-    <h3>Nutrition Guides</h3>
-    <p>Meal plans, macros explained, and science-based eating strategies.</p>
-  </section>
-</main>
+<section class="hero">
+  <h2>Transform Your Body</h2>
+  <p>
+    Step-by-step workout instructions, training programs, and everything
+    you need to get stronger.
+  </p>
 
-  <footer id="contact">
-    <p>Contact us at: support@gymtraininghub.com</p>
-  </footer>
-</body>
-</html>
+  <a href="/step1" class="btn-primary">Start Training</a>
+</section>
+
+{% endblock %}

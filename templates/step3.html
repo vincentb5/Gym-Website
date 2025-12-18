@@ -1,23 +1,27 @@
-<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+{% extends "base.html" %}
 
-<div class="page-container">
+{% block title %}Step 3 - Gym Training Hub{% endblock %}
 
-  <div class="nav-buttons">
-    <a href="/step2"><button class="btn-primary">Back</button></a>
-    <a href="/step4"><button class="btn-primary">Next</button></a>
-  </div>
+{% block content %}
+<section class="page-container">
 
   <div class="info-box">
-    <h2 class="info-title">Step Title</h2>
-
+    <h2 class="info-title">Step 3: Cardio & Conditioning</h2>
     <p class="info-paragraph">
-      Explanation text for this step goes here.
+      Cardio training improves heart health, endurance, and overall conditioning. It can include activities like running, cycling, rowing, or high-intensity interval training. Choose a cardio style that aligns with your goals—steady-paced cardio for endurance or HIIT for fat loss and improved athletic performance. Aim for 15–30 minutes depending on your fitness level and recovery needs.
     </p>
 
     <div class="summary-box">
       <strong>Summary:</strong>
-      <p>Short recap of the key point.</p>
+      <p>Improve endurance and heart health through steady cardio or high-intensity training.</p>
     </div>
   </div>
 
-</div>
+  <!-- Bottom navigation buttons (these are fine) -->
+  <div class="nav-buttons-bottom">
+    <a href="/step2"><button class="btn-primary">Back</button></a>
+    <a href="/step4"><button class="btn-primary">Next</button></a>
+  </div>
+
+</section>
+{% endblock %}
